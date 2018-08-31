@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean name="personDev" class="jee.billy.springstudy.bean.Person">
+        <property name="age" value="1"/>
+        <property name="name" value="1111111"/>
+    </bean>
+
+    <bean name="personProd" class="jee.billy.springstudy.bean.Person">
+        <property name="age" value="2"/>
+        <property name="name" value="22222"/>
+    </bean>
+
+    <!-- 该方案行不通  -->
+
+    <alias name="person#{prop.getObject().getProperty('profile')}" alias="person"/>
+
+    <bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="properties">
+            <props>
+                <prop key="profile">Dev</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>

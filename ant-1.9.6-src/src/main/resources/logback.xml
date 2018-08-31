@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- please use absolute path -->
+    <property name="loghome" value="c:/tmp/antsrclogs"/>
+
+    <!-- print log in console -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{MM-dd HH:mm:ss} [%thread] %logger{15} - %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <!-- output log into file -->
+    <appender name="FILE_STACK" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${loghome}/ant-src-stack.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>${loghome}ant-src-stack.%i.log</FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>12</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>5MB</MaxFileSize>
+        </triggeringPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <!--<Pattern>%d{yy-MM-dd HH:mm:ss.SSS} %line [%thread] %method %-5level %logger{36} - %msg%n</Pattern>-->
+            <Pattern>%d{yyMMdd HH:mm:ss} - %m%n</Pattern>
+        </layout>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${loghome}/ant-src.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>${loghome}ant-src.%i.log</FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>12</MaxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>5MB</MaxFileSize>
+        </triggeringPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <!--<Pattern>%d{yy-MM-dd HH:mm:ss.SSS} %line [%thread] %method %-5level %logger{36} - %msg%n</Pattern>-->
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [L:%line] %c{5}.%M - %m%n</Pattern>
+        </layout>
+    </appender>
+
+    <!--  please use package name rather specific class -->
+    <logger name="org.apache.tools">
+        <level value="DEBUG"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="jee.billy.StackPrintUtil">
+        <level value="DEBUG"/>
+        <appender-ref ref="FILE_STACK" />
+    </logger>
+</configuration>

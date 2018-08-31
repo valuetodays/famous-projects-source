@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="loghome" value="c:/tmp/logs/springstudy"/>
+    <property name="appName" value="springstudy"/>
+
+    <!-- 控制台输出日志 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>[${appName}]%d{MM-dd HH:mm:ss} [%thread] %-5level %logger{36}:%L - %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <logger name="org.springframework" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="jee.billy" level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+</configuration>

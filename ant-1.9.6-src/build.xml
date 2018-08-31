@@ -1,0 +1,12 @@
+<project name="helloProject" default="hello">
+    <description>hahahahahh</description>
+
+
+
+  <target name="hello" >
+  	  <echo message1="[step1]init..." />
+  </target>
+
+
+
+</project>

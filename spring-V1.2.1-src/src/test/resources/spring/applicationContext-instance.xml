@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="properPersonBean"
+          class="billy.spring.study.bean.PersonBeanFactory"
+          factory-method="getPersonBean">
+        <!-- 修改此值可以让静态工厂方法返回不同的Bean   -->
+        <constructor-arg index="0" value="1" />
+    </bean>
+
+    <bean id="personBeanFactory" class="billy.spring.study.bean.PersonBeanFactory"/>
+
+    <bean id="properPersonBeanInstance"
+          factory-bean="personBeanFactory"
+          factory-method="getInstance">
+        <!-- 修改此值可以让实例工厂方法返回不同的Bean -->
+        <constructor-arg index="0" value="1" />
+    </bean>
+
+
+</beans>

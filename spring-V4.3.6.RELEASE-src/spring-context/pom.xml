@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <artifactId>spring-context</artifactId>
+
+    <parent>
+        <artifactId>spring-V4.3.6.RELEASE</artifactId>
+        <groupId>jee.billy</groupId>
+        <version>1</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+
+    <properties>
+        <hibval4Version>4.3.2.Final</hibval4Version>
+        <jodaVersion>2.9.7</jodaVersion>
+        <ejbVersion>3.0</ejbVersion>
+        <jrubyVersion>1.7.26</jrubyVersion>
+
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>jee.billy</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
+            <groupId>jee.billy</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
+            <groupId>jee.billy</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
+            <groupId>jee.billy</groupId>
+            <artifactId>spring-instrument</artifactId>
+            <version>1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.ejb</groupId>
+            <artifactId>ejb-api</artifactId>
+            <version>${ejbVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.money</groupId>
+            <artifactId>money-api</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.beanshell</groupId>
+            <artifactId>bsh</artifactId>
+            <version>2.0b4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jruby</groupId>
+            <artifactId>jruby</artifactId>
+            <version>${jrubyVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.enterprise.concurrent</groupId>
+            <artifactId>javax.enterprise.concurrent-api</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibval4Version}</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${jodaVersion}</version>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,13 @@
+<project name="helloProject" default="hello">
+
+  <target name="before">
+    <echo message="this is before"></echo>
+  </target>
+	
+  <target name="hello" depends="before">
+      <echo message="this_is_message" />
+  </target>
+
+
+
+</project>

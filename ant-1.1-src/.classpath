@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="res"/>
+	<classpathentry kind="src" path="helper"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/bsf-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/ejb10deployment.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.12.jar"/>
+	<classpathentry kind="lib" path="lib/NetRexxC.jar"/>
+	<classpathentry kind="lib" path="lib/xalan-1.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

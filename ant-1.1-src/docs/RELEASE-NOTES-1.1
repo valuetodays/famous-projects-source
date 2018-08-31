@@ -1,0 +1,28 @@
+This is the first stand-alone release of Ant, several older versions
+have been included with Tomcat builds and been referred to as Ant
+"1.0.8" by some people. Therefore the release number has been chosen
+to be 1.1 instead of 1.0.
+
+Ant 1.1 can probably not be built with an older version of Ant, please
+use the bootstrap script to build it from the source release. 
+
+The binary release doesn't contain the optional tasks - compiled
+versions of those are distributed in a separate file: optional.jar.
+
+Build files written for older versions of Ant are expected to work
+(with one exception - see below) but could generate deprecation
+warnings. Future versions of Ant may remove these deprecated features.
+
+Properties are now immutable, this means constructs like
+
+<property name="longproperty" value="value1" />
+<property name="longproperty" value="${longproperty}value2" />
+
+won't work any longer. Properties defined on the command line and
+Java's system properties can not be overridden by <property> tags
+inside the buildfile.
+
+  Thanks for using Ant.
+
+                                          The Apache Jakarta Project
+                                         <http://jakarta.apache.org/>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+    <bean id="applicationContextHelper" class="billy.spring.study.ApplicationContextHelper" />
+
+    <bean id="person1Bean" class="billy.spring.study.bean.Person1Bean">
+        <property name="age" value="21" />
+        <property name="name" value="billy" />
+    </bean>
+    <bean id="person2Bean" class="billy.spring.study.bean.Person2Bean">
+        <property name="age" value="22" />
+        <property name="name" value="anna" />
+    </bean>
+
+    <!--  因为该静态工厂方法中使用了applicationContextHelper，所以要加上depens-on，
+          不加的话，有时会有问题，有时正常^_^
+          -->
+    <bean id="properPerson2Bean"
+          class="billy.spring.study.bean.PersonBean2Factory"
+          factory-method="getPersonBean" depends-on="applicationContextHelper">
+
+        <!-- 修此引值可以让静态工厂方法返回不同的Bean   -->
+        <constructor-arg index="0" value="2" />
+    </bean>
+
+</beans>
